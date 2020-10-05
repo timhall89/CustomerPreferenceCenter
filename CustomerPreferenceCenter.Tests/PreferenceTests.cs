@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 using Shouldly;
-using CustomerPreferenceCenter.Lib;
+using CustomerPreferenceCenter.Lib.Preferences;
 using System.Collections.Generic;
 using System.Linq;
 

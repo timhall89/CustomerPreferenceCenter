@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CustomerPreferenceCenter.Lib
+namespace CustomerPreferenceCenter.Lib.Preferences
 {
     public interface IPreference
     {
