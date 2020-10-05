@@ -13,6 +13,10 @@
         public string FirstName { get; }
         public string LastName { get; }
 
+        public override int GetHashCode() => Id;
+        public override bool Equals(object obj)
+            => obj is Customer customer && customer.GetHashCode() == GetHashCode();
+
         public override string ToString() => $"{Id} - {FirstName} {LastName}";
     }
 }

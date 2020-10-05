@@ -15,6 +15,17 @@ namespace CustomerPreferenceCenter.Tests
             customer.LastName.ShouldBe("Doe");
         }
 
+
+        [Fact]
+        public void Customer_equality_overrides_work()
+        {
+            Customer customer = new Customer(1, "John", "Doe");
+            customer.GetHashCode().ShouldBe(1);
+
+            Customer anotherCustomer = new Customer(1, "John", "Doe");
+            customer.Equals(anotherCustomer).ShouldBeTrue();
+        }
+
         [Fact]
         public void Customer_ToString_override_works()
         {
