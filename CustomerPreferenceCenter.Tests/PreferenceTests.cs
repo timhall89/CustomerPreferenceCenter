@@ -24,6 +24,19 @@ namespace CustomerPreferenceCenter.Tests
         }
 
         [Fact]
+        public void Day_of_month_preference_Parse_Works()
+        {
+            DayOfMonthPreference.Parse("21").ShouldBe(new DayOfMonthPreference(21));
+            DayOfMonthPreference.Parse("40").ShouldBe(new DayOfMonthPreference(28));
+        }
+
+        [Fact]
+        public void Day_of_month_preference_Parse_Throws_Exceptions()
+        {
+            Should.Throw<FormatException>(() => DayOfMonthPreference.Parse("a"));
+        }
+
+        [Fact]
         public void Day_of_month_preference_validates_the_contructor_arg()
         {
             IPreference preferenceLessThanLowerBound = new DayOfMonthPreference(-1);
