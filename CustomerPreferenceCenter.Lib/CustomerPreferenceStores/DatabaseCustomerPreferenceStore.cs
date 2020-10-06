@@ -10,13 +10,13 @@ namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
     /// </summary>
     public class DatabaseCustomerPreferenceStore : ICustomerPreferenceStore
     {
-        public IReadOnlyDictionary<Customer, IPreference> CustomerPreferences
+        public IReadOnlyDictionary<string, IPreference> CustomerPreferences
             => throw new NotImplementedException();
 
-        public void Add(Customer customer, IPreference preference)
+        public void Add(string customer, IPreference preference)
             => throw new NotImplementedException();
         
-        public void Remove(Customer customer)
+        public void Remove(string customer)
             => throw new NotImplementedException();
     }
 }

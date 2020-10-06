@@ -7,23 +7,23 @@ namespace CustomerPreferenceCenter.Lib
 {
     public class PreferenceChecker
     {
-        public IDictionary<DateTime, ISet<Customer>> GetRecipientsForDateRange(DateTime startDate,
-            int numOfDays, IReadOnlyDictionary<Customer, IPreference> customerPreferences)
+        public IReadOnlyDictionary<DateTime, ISet<string>> GetRecipientsForDateRange(DateTime startDate,
+            int numOfDays, IReadOnlyDictionary<string, IPreference> customerPreferences)
         {
-            IDictionary<DateTime, ISet<Customer>> recipientsForDates = new Dictionary<DateTime, ISet<Customer>>();
+            IDictionary<DateTime, ISet<string>> recipientsForDates = new Dictionary<DateTime, ISet<string>>();
 
             DateTime endDate = startDate.AddDays(numOfDays - 1);
 
             for(DateTime date = startDate; date <= endDate; date = date.AddDays(1))
             {
-                IEnumerable<Customer> customers = customerPreferences
+                IEnumerable<string> customers = customerPreferences
                     .Where(customerPreference => customerPreference.Value.SendOnDate(date))
                     .Select(customerPreference => customerPreference.Key);
 
-                recipientsForDates.Add(date, new HashSet<Customer>(customers));
+                recipientsForDates.Add(date, new HashSet<string>(customers));
             }
 
-            return recipientsForDates;
+            return (IReadOnlyDictionary < DateTime, ISet<string> > )recipientsForDates;
         }
     }
 }

@@ -8,21 +8,22 @@ namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
     /// </summary>
     public class InMemoryCustomerPreferenceStore : ICustomerPreferenceStore
     {
-        private readonly IDictionary<Customer, IPreference> customerPreferences;
+        private readonly IDictionary<string, IPreference> customerPreferences;
         public InMemoryCustomerPreferenceStore()
         {
-            customerPreferences = new Dictionary<Customer, IPreference>();
-            Dictionary<int, int> i = new Dictionary<int, int>();
+            customerPreferences = new Dictionary<string, IPreference>();
         }
 
-        public IReadOnlyDictionary<Customer, IPreference> CustomerPreferences => (IReadOnlyDictionary<Customer, IPreference>)customerPreferences;
+        public IReadOnlyDictionary<string, IPreference> CustomerPreferences
+            => (IReadOnlyDictionary<string, IPreference>)customerPreferences;
 
-        public void Add(Customer customer, IPreference preference)
+        public void Add(string customer, IPreference preference)
         {
-            if (customerPreferences.ContainsKey(customer)) throw new CustomerPreferenceAlreadyExistsException(customer);
+            if (customerPreferences.ContainsKey(customer))
+                throw new CustomerPreferenceAlreadyExistsException(customer);
             customerPreferences.Add(customer, preference);
         }
 
-        public void Remove(Customer customer) => customerPreferences.Remove(customer);
+        public void Remove(string customer) => customerPreferences.Remove(customer);
     }
 }
