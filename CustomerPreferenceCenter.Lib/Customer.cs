@@ -2,21 +2,19 @@
 {
     public class Customer
     {
-        public Customer(int id, string firstName, string lastName)
+        public Customer(int id, string name = null)
         {
             Id = id;
-            FirstName = firstName;
-            LastName = lastName;
+            Name = name;
         }
 
         public int Id { get; }
-        public string FirstName { get; }
-        public string LastName { get; }
+        public string Name { get; }
 
         public override int GetHashCode() => Id;
         public override bool Equals(object obj)
             => obj is Customer customer && customer.GetHashCode() == GetHashCode();
 
-        public override string ToString() => $"{Id} - {FirstName} {LastName}";
+        public override string ToString() => $"{Id} - {Name}";
     }
 }

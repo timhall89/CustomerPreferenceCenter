@@ -9,29 +9,27 @@ namespace CustomerPreferenceCenter.Tests
         [Fact]
         public void Customer_constructor_works_correctly()
         {
-            Customer customer = new Customer(1, "John", "Doe");
+            Customer customer = new Customer(1, "John Doe");
             customer.Id.ShouldBe(1);
-            customer.FirstName.ShouldBe("John");
-            customer.LastName.ShouldBe("Doe");
+            customer.Name.ShouldBe("John Doe");
         }
 
 
         [Fact]
         public void Customer_equality_overrides_work()
         {
-            Customer customer = new Customer(1, "John", "Doe");
+            Customer customer = new Customer(1, "John Doe");
             customer.GetHashCode().ShouldBe(1);
 
-            Customer anotherCustomer = new Customer(1, "John", "Doe");
+            Customer anotherCustomer = new Customer(1, "John Doe");
             customer.Equals(anotherCustomer).ShouldBeTrue();
         }
 
         [Fact]
         public void Customer_ToString_override_works()
         {
-            Customer customer = new Customer(1, "John", "Doe");
+            Customer customer = new Customer(1, "John Doe");
             customer.Id.ShouldBe(1);
-            customer.FirstName.ShouldBe("John");
             customer.ToString().ShouldBe("1 - John Doe");
         }
     }

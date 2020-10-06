@@ -13,12 +13,12 @@ namespace CustomerPreferenceCenter.Tests
         {
             IReadOnlyDictionary<Customer, IPreference> customerPreferences = new Dictionary<Customer, IPreference>
             {
-                {new Customer(1, "John", "Doe"), new NeverPreference() },
-                {new Customer(2, "Jane", "Doe"), new EveryDayPreference() },
-                {new Customer(3, "Jessie", "Doe"), new DayOfMonthPreference(4) },
-                {new Customer(4, "Joe", "Doe"), new DayOfMonthPreference(10) },
-                {new Customer(5, "Julie", "Doe"), new DaysOfWeekPreference(new DayOfWeek[]{ DayOfWeek.Monday}) },
-                {new Customer(6, "Jason", "Doe"), new DaysOfWeekPreference(new DayOfWeek[]{ DayOfWeek.Monday, DayOfWeek.Thursday}) },
+                {new Customer(1, "John Doe"), new NeverPreference() },
+                {new Customer(2, "Jane Doe"), new EveryDayPreference() },
+                {new Customer(3, "Jessie Doe"), new DayOfMonthPreference(4) },
+                {new Customer(4, "Joe Doe"), new DayOfMonthPreference(10) },
+                {new Customer(5, "Julie Doe"), new DaysOfWeekPreference(new DayOfWeek[]{ DayOfWeek.Monday}) },
+                {new Customer(6, "Jason Doe"), new DaysOfWeekPreference(new DayOfWeek[]{ DayOfWeek.Monday, DayOfWeek.Thursday}) },
             };
 
             PreferenceChecker preferenceChecker = new PreferenceChecker();
@@ -37,53 +37,53 @@ namespace CustomerPreferenceCenter.Tests
                     new DateTime(2020, 10, 4),
                     new HashSet<Customer>
                     {
-                        new Customer(2, "Jane", "Doe"),
-                        new Customer(3, "Jessie", "Doe")
+                        new Customer(2, "Jane Doe"),
+                        new Customer(3, "Jessie Doe")
                     }
                 },
                 {
                     new DateTime(2020, 10, 5), new HashSet<Customer>
                     {
-                        new Customer(2, "Jane", "Doe"),
-                        new Customer(5, "Julie", "Doe"),
-                        new Customer(6, "Jason", "Doe")
+                        new Customer(2, "Jane Doe"),
+                        new Customer(5, "Julie Doe"),
+                        new Customer(6, "Jason Doe")
                     }
                 },
                 {
                     new DateTime(2020, 10, 6),
                     new HashSet<Customer>
                     {
-                        new Customer(2, "Jane", "Doe")
+                        new Customer(2, "Jane Doe")
                     }
                 },
                 {
                     new DateTime(2020, 10, 7),
                     new HashSet<Customer>
                     {
-                        new Customer(2, "Jane", "Doe")
+                        new Customer(2, "Jane Doe")
                     }
                 },
                 {
                     new DateTime(2020, 10, 8),
                     new HashSet<Customer>
                     {
-                        new Customer(2, "Jane", "Doe"),
-                        new Customer(6, "Jason", "Doe")
+                        new Customer(2, "Jane Doe"),
+                        new Customer(6, "Jason Doe")
                     }
                 },
                 {
                     new DateTime(2020, 10, 9),
                     new HashSet<Customer>
                     {
-                        new Customer(2, "Jane", "Doe")
+                        new Customer(2, "Jane Doe")
                     }
                 },
                 {
                     new DateTime(2020, 10, 10),
                     new HashSet<Customer>
                     {
-                        new Customer(2, "Jane", "Doe"),
-                        new Customer(4, "Joe", "Doe")
+                        new Customer(2, "Jane Doe"),
+                        new Customer(4, "Joe Doe")
                     }
                 },
             };
