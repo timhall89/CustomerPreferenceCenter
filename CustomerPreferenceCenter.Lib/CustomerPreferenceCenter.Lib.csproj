@@ -6,5 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Preferences\" />
+    <Folder Include="CustomerPreferenceStores\" />
   </ItemGroup>
 </Project>
