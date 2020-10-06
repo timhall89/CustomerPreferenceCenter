@@ -8,6 +8,7 @@ namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
     public interface ICustomerPreferenceStore
     {
         IReadOnlyDictionary<Customer, IPreference> CustomerPreferences { get; }
-        void AddCustomerPreference(Customer customer, IPreference preference);
+        void Add(Customer customer, IPreference preference);
+        void Remove(Customer customer);
     }
 }

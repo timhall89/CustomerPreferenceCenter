@@ -16,10 +16,13 @@ namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
         }
 
         public IReadOnlyDictionary<Customer, IPreference> CustomerPreferences => (IReadOnlyDictionary<Customer, IPreference>)customerPreferences;
-        public void AddCustomerPreference(Customer customer, IPreference preference)
+
+        public void Add(Customer customer, IPreference preference)
         {
             if (customerPreferences.ContainsKey(customer)) throw new CustomerPreferenceAlreadyExistsException(customer);
             customerPreferences.Add(customer, preference);
         }
+
+        public void Remove(Customer customer) => customerPreferences.Remove(customer);
     }
 }
