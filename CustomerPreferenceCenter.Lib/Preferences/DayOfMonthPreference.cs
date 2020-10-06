@@ -10,5 +10,7 @@ namespace CustomerPreferenceCenter.Lib.Preferences
         }
 
         public bool SendOnDate(DateTime date) => date.Day == dayOfMonth;
+
+        public override string ToString() => $"Day of month: {dayOfMonth}";
     }
 }

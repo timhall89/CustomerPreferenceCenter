@@ -11,5 +11,7 @@ namespace CustomerPreferenceCenter.Lib.Preferences
         }
 
         public bool SendOnDate(DateTime date) => daysOfWeek.Contains(date.DayOfWeek);
+
+        public override string ToString() => string.Join(", ", daysOfWeek);
     }
 }
