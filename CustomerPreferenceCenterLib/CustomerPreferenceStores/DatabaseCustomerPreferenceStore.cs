@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using CustomerPreferenceCenter.Lib.Preferences;
+using CustomerPreferenceCenterLib.Preferences;
 
-namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
+namespace CustomerPreferenceCenterLib.CustomerPreferenceStores
 {
     /// <summary>
     /// This Class is NOT implemented but it represents how a Customer

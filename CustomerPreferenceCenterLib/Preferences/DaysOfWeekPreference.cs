@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace CustomerPreferenceCenter.Lib.Preferences
+namespace CustomerPreferenceCenterLib.Preferences
 {
     public class DaysOfWeekPreference : IPreference
     {

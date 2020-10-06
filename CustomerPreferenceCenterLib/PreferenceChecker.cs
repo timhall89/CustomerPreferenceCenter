@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CustomerPreferenceCenter.Lib.Preferences;
+using CustomerPreferenceCenterLib.Preferences;
 
-namespace CustomerPreferenceCenter.Lib
+namespace CustomerPreferenceCenterLib
 {
     public class PreferenceChecker
     {

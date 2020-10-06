@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCenter.Lib", "CustomerPreferenceCenter.Lib\CustomerPreferenceCenter.Lib.csproj", "{5AB5116F-59C7-4805-B99E-BE47DA345FEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCenterLib", "CustomerPreferenceCenter.Lib\CustomerPreferenceCenterLib.csproj", "{5AB5116F-59C7-4805-B99E-BE47DA345FEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCenter.Tests", "CustomerPreferenceCenter.Tests\CustomerPreferenceCenter.Tests.csproj", "{AB7D81F6-FF89-4DE5-899B-9AA2F49A64F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCenterLib.Tests", "CustomerPreferenceCenter.Tests\CustomerPreferenceCenterLib.Tests.csproj", "{AB7D81F6-FF89-4DE5-899B-9AA2F49A64F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCenterConsole", "CustomerPreferenceCenterConsole\CustomerPreferenceCenterConsole.csproj", "{493BBD4B-70BA-4D1D-A0A7-92D677D63BCE}"
 EndProject

@@ -1,10 +1,9 @@
 ﻿using System;
 using Xunit;
 using Shouldly;
-using CustomerPreferenceCenter.Lib;
-using CustomerPreferenceCenter.Lib.Preferences;
+using CustomerPreferenceCenterLib.Preferences;
 using System.Collections.Generic;
-namespace CustomerPreferenceCenter.Tests
+namespace CustomerPreferenceCenterLib.Tests
 {
     public class PreferenceCheckerTests
     {

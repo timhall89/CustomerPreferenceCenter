@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
+namespace CustomerPreferenceCenterLib.CustomerPreferenceStores
 {
     public class CustomerPreferenceAlreadyExistsException : Exception
     {

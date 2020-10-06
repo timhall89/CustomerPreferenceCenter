@@ -1,11 +1,11 @@
 ﻿using System;
 using Xunit;
 using Shouldly;
-using CustomerPreferenceCenter.Lib.Preferences;
+using CustomerPreferenceCenterLib.Preferences;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CustomerPreferenceCenter.Tests
+namespace CustomerPreferenceCenterLib.Tests
 {
     public class PreferenceTests
     {
@@ -23,6 +23,16 @@ namespace CustomerPreferenceCenter.Tests
             }
         }
 
+
+        [Fact]
+        public void Day_of_month_preference_validates_the_contructor_arg()
+        {
+            IPreference preferenceLessThanLowerBound = new DayOfMonthPreference(-1);
+            preferenceLessThanLowerBound.SendOnDate(new DateTime(2020, 1, 1)).ShouldBeTrue();
+            IPreference preferenceGreaterThanUpperBound = new DayOfMonthPreference(40);
+            preferenceGreaterThanUpperBound.SendOnDate(new DateTime(2020, 1, 28)).ShouldBeTrue();
+        }
+
         [Fact]
         public void Day_of_month_preference_Parse_Works()
         {
@@ -36,14 +46,6 @@ namespace CustomerPreferenceCenter.Tests
             Should.Throw<FormatException>(() => DayOfMonthPreference.Parse("a"));
         }
 
-        [Fact]
-        public void Day_of_month_preference_validates_the_contructor_arg()
-        {
-            IPreference preferenceLessThanLowerBound = new DayOfMonthPreference(-1);
-            preferenceLessThanLowerBound.SendOnDate(new DateTime(2020, 1, 1)).ShouldBeTrue();
-            IPreference preferenceGreaterThanUpperBound = new DayOfMonthPreference(40);
-            preferenceGreaterThanUpperBound.SendOnDate(new DateTime(2020, 1, 28)).ShouldBeTrue();
-        }
 
         [Fact]
         public void Days_of_week_preference_determines_correct_result()

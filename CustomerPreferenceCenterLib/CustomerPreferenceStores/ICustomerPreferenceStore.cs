@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using CustomerPreferenceCenter.Lib.Preferences;
-namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
+using CustomerPreferenceCenterLib.Preferences;
+namespace CustomerPreferenceCenterLib.CustomerPreferenceStores
 {
     /// <summary>
     /// Represents a store for adding and retreiving Customer Preferences.

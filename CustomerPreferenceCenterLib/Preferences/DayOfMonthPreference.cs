@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CustomerPreferenceCenter.Lib.Preferences
+namespace CustomerPreferenceCenterLib.Preferences
 {
     public class DayOfMonthPreference : IPreference
     {

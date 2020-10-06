@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using CustomerPreferenceCenter.Lib.Preferences;
-namespace CustomerPreferenceCenter.Lib.CustomerPreferenceStores
+using CustomerPreferenceCenterLib.Preferences;
+namespace CustomerPreferenceCenterLib.CustomerPreferenceStores
 {
     /// <summary>
     /// Holds Customer Preferences in memory for each instance.

@@ -1,7 +1,7 @@
 ﻿using System;
-using CustomerPreferenceCenter.Lib;
-using CustomerPreferenceCenter.Lib.CustomerPreferenceStores;
-using CustomerPreferenceCenter.Lib.Preferences;
+using CustomerPreferenceCenterLib;
+using CustomerPreferenceCenterLib.CustomerPreferenceStores;
+using CustomerPreferenceCenterLib.Preferences;
 using static CustomerPreferenceCenterConsole.ConsoleReaderAndWriter;
 namespace CustomerPreferenceCenterConsole
 {
