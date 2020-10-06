@@ -4,7 +4,6 @@ using Shouldly;
 using CustomerPreferenceCenter.Lib;
 using CustomerPreferenceCenter.Lib.Preferences;
 using System.Collections.Generic;
-using System.Linq;
 namespace CustomerPreferenceCenter.Tests
 {
     public class PreferenceCheckerTests
@@ -12,7 +11,7 @@ namespace CustomerPreferenceCenter.Tests
         [Fact]
         public void Preference_checker_checks_correctly()
         {
-            IDictionary<Customer, IPreference> customerPreferences = new Dictionary<Customer, IPreference>
+            IReadOnlyDictionary<Customer, IPreference> customerPreferences = new Dictionary<Customer, IPreference>
             {
                 {new Customer(1, "John", "Doe"), new NeverPreference() },
                 {new Customer(2, "Jane", "Doe"), new EveryDayPreference() },

@@ -8,7 +8,7 @@ namespace CustomerPreferenceCenter.Lib
     public class PreferenceChecker
     {
         public IDictionary<DateTime, ISet<Customer>> GetRecipientsForDateRange(DateTime startDate,
-            int numOfDays, IDictionary<Customer, IPreference> customerPreferences)
+            int numOfDays, IReadOnlyDictionary<Customer, IPreference> customerPreferences)
         {
             IDictionary<DateTime, ISet<Customer>> recipientsForDates = new Dictionary<DateTime, ISet<Customer>>();
 
