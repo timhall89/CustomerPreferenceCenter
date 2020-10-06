@@ -15,6 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerPreferenceCenter.Lib\CustomerPreferenceCenterLib.csproj" />
+    <ProjectReference Include="..\CustomerPreferenceCenterLib\CustomerPreferenceCenterLib.csproj" />
   </ItemGroup>
 </Project>
