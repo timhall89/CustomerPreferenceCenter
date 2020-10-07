@@ -68,7 +68,7 @@ namespace CustomerPreferenceCenterConsole
             _($"{Options.LIST_COSTOMER_PREFERENCES} - List all customer preferences");
             _($"{Options.REPORT_RECIPIENTS_FOR_DATE_RANGE} - Report of recipients on a date range");
             _($"{Options.LIST_OPTIONS} - Help, list out these apotions again");
-            _($"{Options.EXIT} - End the application");
+            _($"{Options.EXIT} - End the application or Cancel an in progress operation");
         }
 
         public static void ListPreferenceOptions()

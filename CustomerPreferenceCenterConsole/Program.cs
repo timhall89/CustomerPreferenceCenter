@@ -48,10 +48,10 @@ namespace CustomerPreferenceCenterConsole
                     break;
                 case Options.LIST_COSTOMER_PREFERENCES:
                     if (customerPreferenceStore.CustomerPreferences.Count < 1)
-                        _("-- No Preferences --");
+                        _("!! No Preferences !!");
                     foreach (var customerPreference in customerPreferenceStore.CustomerPreferences)
                     {
-                        _($"[{customerPreference.Key}] => [{customerPreference.Value}]");
+                        _($" - [{customerPreference.Key}] => [{customerPreference.Value}]");
                     }
                     break;
                 case Options.REPORT_RECIPIENTS_FOR_DATE_RANGE:
@@ -67,7 +67,7 @@ namespace CustomerPreferenceCenterConsole
 
         private void DeleteCustomerPreference()
         {
-            _("Deleteing customer preference");
+            _("-- Delete customer preference --");
             try
             {
                 ReadConsoleInput(name =>
@@ -81,13 +81,13 @@ namespace CustomerPreferenceCenterConsole
             }
             catch (OperationCanceledException)
             {
-                _("Deleting customer preference cancelled");
+                _("-- CANCELLED: Delete customer preference --");
             }
         }
 
         private void ListRecipientsOnDates()
         {
-            _("Listing recipients on dates");
+            _("-- List recipients on dates --");
             try
             {
                 int numOfDays = ReadConsoleInput(input =>
@@ -100,18 +100,18 @@ namespace CustomerPreferenceCenterConsole
 
                 foreach (var x in preferenceChecker.GetRecipientsForDateRange(DateTime.Today, numOfDays, customerPreferenceStore.CustomerPreferences))
                 {
-                    _($"{x.Key:ddd dd/MM/yyyy} | {string.Join(", ", x.Value)}");
+                    _($" - [{x.Key:ddd dd/MM/yyyy}] => {string.Join(", ", x.Value)}");
                 }
             }
             catch (OperationCanceledException)
             {
-                _("Listing recipients cancelled");
+                _("-- CANCELLED: List recipients on dates --");
             }
         }
 
         private void AddNewCustomerPreference()
         {
-            _("-- Adding new Customer preference --");
+            _("-- Add Customer preference --");
             try
             {
                 string customer = GetCustomer();
@@ -121,7 +121,7 @@ namespace CustomerPreferenceCenterConsole
             }
             catch (OperationCanceledException)
             {
-                _("Adding new customer preference process was exited with out being completed");
+                _("-- CANCELLED: Add customer preference --");
             }
         }
 
