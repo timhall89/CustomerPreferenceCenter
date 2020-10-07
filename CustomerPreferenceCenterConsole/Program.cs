@@ -29,7 +29,6 @@ namespace CustomerPreferenceCenterConsole
             try
             {
                 while (true) ReadConsoleInput(RunCommand, "Type a command and hit enter...");
-
             }
             catch (OperationCanceledException)
             {
@@ -39,26 +38,26 @@ namespace CustomerPreferenceCenterConsole
 
         private void RunCommand(string command)
         {
-            switch (command.ToUpper().Trim())
+            switch (command.ToUpper())
             {
-                case "A":
+                case Options.ADD_NEW_CUSTOMER_PREFERENCE:
                     AddNewCustomerPreference();
                     break;
-                case "D":
+                case Options.DELETE_CUSTOMER_PREFERENCE:
                     DeleteCustomerPreference();
                     break;
-                case "L":
+                case Options.LIST_COSTOMER_PREFERENCES:
                     if (customerPreferenceStore.CustomerPreferences.Count < 1)
                         _("-- No Preferences --");
                     foreach (var customerPreference in customerPreferenceStore.CustomerPreferences)
                     {
-                        _($"[{customerPreference.Key}] [{customerPreference.Value}]");
+                        _($"[{customerPreference.Key}] => [{customerPreference.Value}]");
                     }
                     break;
-                case "R":
+                case Options.REPORT_RECIPIENTS_FOR_DATE_RANGE:
                     ListRecipientsOnDates();
                     break;
-                case "H":
+                case Options.LIST_OPTIONS:
                     ListCommands();
                     break;
                 default:
@@ -112,13 +111,13 @@ namespace CustomerPreferenceCenterConsole
 
         private void AddNewCustomerPreference()
         {
-            _("Adding new Customer preference");
+            _("-- Adding new Customer preference --");
             try
             {
                 string customer = GetCustomer();
                 IPreference preference = GetPreference();
                 customerPreferenceStore.Add(customer, preference);
-                _($"*** Created new customer Preference : [{customer}] [{preference}]");
+                _($"*** Created new customer Preference : [{customer}] => [{preference}]");
             }
             catch (OperationCanceledException)
             {
@@ -146,17 +145,17 @@ namespace CustomerPreferenceCenterConsole
             IPreference preference;
             switch (option.ToUpper())
             {
-                case "E":
+                case Options.EVERY_DAY_PREFERENCE:
                     preference = new EveryDayPreference();
                     break;
-                case "N":
+                case Options.NEVER_PREFERENCE:
                     preference = new NeverPreference();
                     break;
-                case "M":
+                case Options.DAY_OF_MONTH_PREFERENCE:
                     string dayOfMonthMessage = "Enter the day of month (1 - 28), Any number less than 1 will be taken as 1 and any number greater than 28 will be taken as 28";
                     preference = ReadConsoleInput(DayOfMonthPreference.Parse, dayOfMonthMessage);
                     break;
-                case "W":
+                case Options.DAYS_OF_WEEK_PREFERENCE:
                     _(@"Enter a comma separated list of one or more weekday numbers, from 1 = Sunday to 7 = Saturday, example ""1,4,5""");
                     _("if any values are not a number between 1 and 7 the whole input will fail");
                     preference = ReadConsoleInput(DaysOfWeekPreference.Parse);
