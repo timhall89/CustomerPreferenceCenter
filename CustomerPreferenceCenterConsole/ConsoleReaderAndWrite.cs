@@ -8,22 +8,7 @@ namespace CustomerPreferenceCenterConsole
         public static void _(string s) => Console.WriteLine(s);
         public static void Warn(string s) => Console.WriteLine($"WARNING: {s}");
 
-        public static T ReadConsoleInput<T>(Func<string, T> convert)
-        {
-            while (true)
-            {
-                try
-                {
-                    return convert(ReadConsoleInput());
-                }
-                catch (FormatException ex)
-                {
-                    Warn(ex.Message);
-                }
-            }
-        }
-
-        public static T ReadConsoleInput<T>(string msg, Func<string, T> convert)
+        public static T ReadConsoleInput<T>(Func<string, T> convert, string msg = null)
         {
             while (true)
             {
@@ -34,29 +19,11 @@ namespace CustomerPreferenceCenterConsole
                 catch (FormatException ex)
                 {
                     Warn(ex.Message);
-                    _("");
                 }
             }
         }
 
-        public static void ReadConsoleInput(Action<string> callBack)
-        {
-            while (true)
-            {
-                try
-                {
-                    callBack(ReadConsoleInput());
-                    return;
-                }
-                catch (FormatException ex)
-                {
-                    Warn(ex.Message);
-                    _("");
-                }
-            }
-        }
-
-        public static void ReadConsoleInput(string msg, Action<string> callBack)
+        public static void ReadConsoleInput(Action<string> callBack, string msg = null)
         {
             while (true)
             {
@@ -68,20 +35,17 @@ namespace CustomerPreferenceCenterConsole
                 catch (FormatException ex)
                 {
                     Warn(ex.Message);
-                    _("");
                 }
             }
         }
 
-        public static string ReadConsoleInput(string msg)
+        public static string ReadConsoleInput(string msg = null)
         {
-            _("");
-            if (msg != null) _(msg);
-            return ReadConsoleInput();
-        }
-
-        public static string ReadConsoleInput()
-        {
+            if(msg != null)
+            {
+                _("");
+                if (msg != null) _(msg);
+            }
             _("");
             Console.Write(">> ");
             string line = Console.ReadLine();

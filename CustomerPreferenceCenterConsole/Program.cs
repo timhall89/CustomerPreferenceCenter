@@ -12,7 +12,6 @@ namespace CustomerPreferenceCenterConsole
 
         static void Main()
         {
-            
             Program program = new Program(new InMemoryCustomerPreferenceStore(), new PreferenceChecker());
             program.Run();
         }
@@ -29,7 +28,7 @@ namespace CustomerPreferenceCenterConsole
             ListCommands();
             try
             {
-                while (true) ReadConsoleInput("Type a command and hit enter...", RunCommand);
+                while (true) ReadConsoleInput(RunCommand, "Type a command and hit enter...");
 
             }
             catch (OperationCanceledException)
@@ -72,12 +71,12 @@ namespace CustomerPreferenceCenterConsole
             _("Deleteing customer preference");
             try
             {
-                ReadConsoleInput("Enter name of customer", name =>
+                ReadConsoleInput(name =>
                 {
                     if(!customerPreferenceStore.CustomerPreferences.ContainsKey(name))
                         throw new FormatException($"No preference for customer {name}, please try again");
                     customerPreferenceStore.Remove(name);
-                });
+                }, "Enter name of customer");
 
                 _("Customer preference deleted");
             }
@@ -92,13 +91,13 @@ namespace CustomerPreferenceCenterConsole
             _("Listing recipients on dates");
             try
             {
-                int numOfDays = ReadConsoleInput("Enter number of days to view", input =>
+                int numOfDays = ReadConsoleInput(input =>
                 {
                     if (!int.TryParse(input, out int num) || num < 1 || num > 365)
                         throw new FormatException("Input must be a valid integer between 1 and 365, please try again");
 
                     return num;
-                });
+                }, "Enter number of days to view");
 
                 foreach (var x in preferenceChecker.GetRecipientsForDateRange(DateTime.Today, numOfDays, customerPreferenceStore.CustomerPreferences))
                 {
@@ -128,11 +127,13 @@ namespace CustomerPreferenceCenterConsole
         }
 
         private string GetCustomer()
-            => ReadConsoleInput("Enter the customer Name",
-                name =>
-                !customerPreferenceStore.CustomerPreferences.ContainsKey(name)
-                ? name
-                : throw new FormatException($"A preference for {name} already exists, please enter a different name or exit this wizard and delete the preference for {name}"));
+            => ReadConsoleInput(name =>
+            {
+                if (customerPreferenceStore.CustomerPreferences.ContainsKey(name))
+                    throw new FormatException($"A preference for {name} already exists, please enter a different name or exit this wizard and delete the preference for {name}");
+
+                return name;
+            }, "Enter the customer Name");
 
         private IPreference GetPreference()
         {
@@ -153,7 +154,7 @@ namespace CustomerPreferenceCenterConsole
                     break;
                 case "M":
                     string dayOfMonthMessage = "Enter the day of month (1 - 28), Any number less than 1 will be taken as 1 and any number greater than 28 will be taken as 28";
-                    preference = ReadConsoleInput(dayOfMonthMessage, DayOfMonthPreference.Parse);
+                    preference = ReadConsoleInput(DayOfMonthPreference.Parse, dayOfMonthMessage);
                     break;
                 case "W":
                     _(@"Enter a comma separated list of one or more weekday numbers, from 1 = Sunday to 7 = Saturday, example ""1,4,5""");
