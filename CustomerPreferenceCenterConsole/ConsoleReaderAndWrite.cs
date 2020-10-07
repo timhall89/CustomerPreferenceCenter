@@ -66,7 +66,7 @@ namespace CustomerPreferenceCenterConsole
             _($"{Options.DELETE_CUSTOMER_PREFERENCE} - Delete a customer preference");
             _($"{Options.LIST_COSTOMER_PREFERENCES} - List all customer preferences");
             _($"{Options.REPORT_RECIPIENTS_FOR_DATE_RANGE} - Report of recipients on a date range");
-            _($"{Options.LIST_OPTIONS} - Help, list out these apotions again");
+            _($"{Options.LIST_OPTIONS} - Help, list out these options again");
             _($"{Options.EXIT} - End the application or Cancel an in progress operation");
         }
 
