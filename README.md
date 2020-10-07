@@ -5,7 +5,10 @@ To run the console application do one of the following (NOTE: you must have dotn
 - Open in Visual studio and run the CustomerPreferenceCenterConsole project
 - Navigate to root folder in Command Line/Terminal and run `dotnet run --project CustomerPreferenceCenterConsole/CustomerPreferenceCenterConsole.csproj`
 
-Please follow the application instructions in the console... these _should_ be enough for me not to need a detailed guide in this README :)
+Please follow the application instructions in the console... these _should_ be enough for me not to need a detailed walkthrough in this README :)
+
+here is a screenshot of what the application will look like:
+<img src="/CustomerPreferenceCenter_Screenshot.png" alt="Screenshot"/>
 
 ### Solution overview
 > #### CustomerPreferenceCenterLib
@@ -42,36 +45,19 @@ For example, Customer A chooses 'Every day'. Customer B chooses 'On the 10th of 
 |||
 
 |----------|:-------------:|
-
 |Sun 01-April-2018|A
-
 |Mon 02-April-2018|A
-
 |Tue 03-April-2018|A,C
-
 |Wed 04-April-2018|A
-
 |Thu 05-April-2018|A
-
 |Fri 06-April-2018|A,C
-
 |Sat 07-April-2018|A
-
 |Sun 08-April-2018|A
-
 |Mon 09-April-2018|A
-
 |Tue 10-April-2018|A,B,C
-
 |Wed 11-April-2018|A
-
 |Thu 12-April-2018|A
-
 |Fri 13-April-2018|A,C
-
 |Sat 14-April-2018|A
-
-  
-  
 
 The input/output format is yours to decide. You should aim to design a ‘turn-key’ solution but appropriate documentation is also welcome.
