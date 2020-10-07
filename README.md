@@ -5,7 +5,7 @@ To run the console application do one of the following (NOTE: you must have dotn
 - Open in Visual studio and run the CustomerPreferenceCenterConsole project
 - Navigate to root folder in Command Line/Terminal and run `dotnet run --project CustomerPreferenceCenterConsole/CustomerPreferenceCenterConsole.csproj`
 
-Please follow the application instructions in the console... these _should_ be enough for me not to need a detailed walkthrough in this README :)
+Please follow the application instructions in the console... these _should_ be enough without the need to have a walkthrough in this README :)
 
 here is a screenshot of what the application will look like:
 <img src="/CustomerPreferenceCenter_Screenshot.png" alt="Screenshot"/>
