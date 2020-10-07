@@ -43,8 +43,7 @@ Implement a system that accepts the choices of multiple customers as input. Afte
 For example, Customer A chooses 'Every day'. Customer B chooses 'On the 10th of the month'. Customer C chooses ‘On Tuesday and Friday’. After providing this input the abridged output beginning in April would be:
 
 |||
-
-|----------|:-------------:|
+-|:-
 |Sun 01-April-2018|A
 |Mon 02-April-2018|A
 |Tue 03-April-2018|A,C
