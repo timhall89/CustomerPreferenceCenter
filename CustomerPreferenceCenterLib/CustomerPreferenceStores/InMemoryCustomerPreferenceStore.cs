@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CustomerPreferenceCenterLib.Preferences;
 namespace CustomerPreferenceCenterLib.CustomerPreferenceStores
 {
@@ -19,9 +20,8 @@ namespace CustomerPreferenceCenterLib.CustomerPreferenceStores
 
         public void Add(string customer, IPreference preference)
         {
-            if (customerPreferences.ContainsKey(customer))
-                throw new CustomerPreferenceAlreadyExistsException(customer);
-            customerPreferences.Add(customer, preference);
+            if (!customerPreferences.TryAdd(customer, preference))
+                throw new InvalidOperationException($"A preference for {customer} already exists");
         }
 
         public void Remove(string customer) => customerPreferences.Remove(customer);
