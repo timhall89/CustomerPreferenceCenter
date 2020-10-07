@@ -1,5 +1,5 @@
 ﻿using System;
-using CustomerPreferenceCenterLib;
+using CustomerPreferenceCenterLib.PreferenceCheckers;
 using CustomerPreferenceCenterLib.CustomerPreferenceStores;
 using CustomerPreferenceCenterLib.Preferences;
 using static CustomerPreferenceCenterConsole.ConsoleReaderAndWriter;
@@ -8,7 +8,7 @@ namespace CustomerPreferenceCenterConsole
     class Program
     {
         private readonly ICustomerPreferenceStore customerPreferenceStore;
-        private readonly PreferenceChecker preferenceChecker;
+        private readonly IPreferenceChecker preferenceChecker;
 
         static void Main()
         {
@@ -16,7 +16,7 @@ namespace CustomerPreferenceCenterConsole
             program.Run();
         }
 
-        public Program(ICustomerPreferenceStore customerPreferenceStore, PreferenceChecker preferenceChecker)
+        public Program(ICustomerPreferenceStore customerPreferenceStore, IPreferenceChecker preferenceChecker)
         {
             this.customerPreferenceStore = customerPreferenceStore;
             this.preferenceChecker = preferenceChecker;

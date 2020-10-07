@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using CustomerPreferenceCenterLib.Preferences;
 
-namespace CustomerPreferenceCenterLib
+namespace CustomerPreferenceCenterLib.PreferenceCheckers
 {
-    public class PreferenceChecker
+    public class PreferenceChecker : IPreferenceChecker
     {
         public IReadOnlyDictionary<DateTime, ISet<string>> GetRecipientsForDateRange(DateTime startDate,
             int numOfDays, IReadOnlyDictionary<string, IPreference> customerPreferences)

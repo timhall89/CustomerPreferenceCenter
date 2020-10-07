@@ -2,6 +2,7 @@
 using Xunit;
 using Shouldly;
 using CustomerPreferenceCenterLib.Preferences;
+using CustomerPreferenceCenterLib.PreferenceCheckers;
 using System.Collections.Generic;
 namespace CustomerPreferenceCenterLib.Tests
 {
@@ -20,7 +21,7 @@ namespace CustomerPreferenceCenterLib.Tests
                 {"Jason Doe", new DaysOfWeekPreference(new DayOfWeek[]{ DayOfWeek.Monday, DayOfWeek.Thursday}) },
             };
 
-            PreferenceChecker preferenceChecker = new PreferenceChecker();
+            IPreferenceChecker preferenceChecker = new PreferenceChecker();
             DateTime startDate = new DateTime(2020, 10, 4);
             int numOfDays = 7;
 
