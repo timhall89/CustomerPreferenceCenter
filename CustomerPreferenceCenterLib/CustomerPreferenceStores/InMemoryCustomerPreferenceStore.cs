@@ -8,14 +8,14 @@ namespace CustomerPreferenceCenterLib.CustomerPreferenceStores
     /// </summary>
     public class InMemoryCustomerPreferenceStore : ICustomerPreferenceStore
     {
-        private readonly IDictionary<string, IPreference> customerPreferences;
+        private readonly Dictionary<string, IPreference> customerPreferences;
         public InMemoryCustomerPreferenceStore()
         {
             customerPreferences = new Dictionary<string, IPreference>();
         }
 
         public IReadOnlyDictionary<string, IPreference> CustomerPreferences
-            => (IReadOnlyDictionary<string, IPreference>)customerPreferences;
+            => customerPreferences;
 
         public void Add(string customer, IPreference preference)
         {

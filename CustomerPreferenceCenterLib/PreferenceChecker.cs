@@ -10,7 +10,7 @@ namespace CustomerPreferenceCenterLib
         public IReadOnlyDictionary<DateTime, ISet<string>> GetRecipientsForDateRange(DateTime startDate,
             int numOfDays, IReadOnlyDictionary<string, IPreference> customerPreferences)
         {
-            IDictionary<DateTime, ISet<string>> recipientsForDates = new Dictionary<DateTime, ISet<string>>();
+            Dictionary<DateTime, ISet<string>> recipientsForDates = new Dictionary<DateTime, ISet<string>>();
 
             DateTime endDate = startDate.AddDays(numOfDays - 1);
 
@@ -23,7 +23,7 @@ namespace CustomerPreferenceCenterLib
                 recipientsForDates.Add(date, new HashSet<string>(customers));
             }
 
-            return (IReadOnlyDictionary < DateTime, ISet<string> > )recipientsForDates;
+            return recipientsForDates;
         }
     }
 }
