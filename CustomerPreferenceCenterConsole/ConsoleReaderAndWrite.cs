@@ -44,7 +44,6 @@ namespace CustomerPreferenceCenterConsole
                 _("");
                 if (msg != null) _(msg);
             }
-            _("");
             Console.Write(">> ");
             string line = Console.ReadLine();
             _("");

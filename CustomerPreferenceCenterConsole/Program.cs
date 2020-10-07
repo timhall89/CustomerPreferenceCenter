@@ -96,7 +96,7 @@ namespace CustomerPreferenceCenterConsole
                         throw new FormatException("Input must be a valid integer between 1 and 365, please try again");
 
                     return num;
-                }, "Enter number of days to view");
+                }, "Enter number of days to view (between 1 and 365)");
 
                 foreach (var x in preferenceChecker.GetRecipientsForDateRange(DateTime.Today, numOfDays, customerPreferenceStore.CustomerPreferences))
                 {
@@ -156,13 +156,12 @@ namespace CustomerPreferenceCenterConsole
                     preference = ReadConsoleInput(DayOfMonthPreference.Parse, dayOfMonthMessage);
                     break;
                 case Options.DAYS_OF_WEEK_PREFERENCE:
-                    _(@"Enter a comma separated list of one or more weekday numbers, from 1 = Sunday to 7 = Saturday, example ""1,4,5""");
+                    _(@"Enter a comma separated list of one or more weekday numbers, from 1 = Sun to 7 = Sat, example ""1,4,5""");
                     _("if any values are not a number between 1 and 7 the whole input will fail");
                     preference = ReadConsoleInput(DaysOfWeekPreference.Parse);
                     break;
                 default:
                     throw new FormatException($"Option {option} is not valid, please try again");
-
             }
 
             return preference;
