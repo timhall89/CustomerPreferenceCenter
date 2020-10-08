@@ -10,7 +10,7 @@ namespace CustomerPreferenceCenterLib.PreferenceCheckers
         public IReadOnlyDictionary<DateTime, ISet<string>> GetRecipientsForDateRange(DateTime startDate,
             int numOfDays, IReadOnlyDictionary<string, IPreference> customerPreferences)
         {
-            Dictionary<DateTime, ISet<string>> recipientsForDates = new Dictionary<DateTime, ISet<string>>();
+            Dictionary<DateTime, ISet<string>> recipientsForDates = new Dictionary<DateTime, ISet<string>>(numOfDays);
 
             DateTime endDate = startDate.AddDays(numOfDays - 1);
 
