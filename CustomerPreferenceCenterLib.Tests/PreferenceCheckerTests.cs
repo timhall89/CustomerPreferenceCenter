@@ -21,7 +21,7 @@ namespace CustomerPreferenceCenterLib.Tests
                 {"Jason Doe", new DaysOfWeekPreference(new DayOfWeek[]{ DayOfWeek.Monday, DayOfWeek.Thursday}) },
             };
 
-            IPreferenceChecker preferenceChecker = new PreferenceChecker();
+            IPreferenceChecker preferenceChecker = new BasicPreferenceChecker();
             DateTime startDate = new DateTime(2020, 10, 4);
             int numOfDays = 7;
 

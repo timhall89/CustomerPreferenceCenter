@@ -12,7 +12,7 @@ namespace CustomerPreferenceCenterConsole
 
         static void Main()
         {
-            Program program = new Program(new InMemoryCustomerPreferenceStore(), new PreferenceChecker());
+            Program program = new Program(new InMemoryCustomerPreferenceStore(), new BasicPreferenceChecker());
             program.Run();
         }
 

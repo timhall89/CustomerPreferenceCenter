@@ -5,7 +5,7 @@ using CustomerPreferenceCenterLib.Preferences;
 
 namespace CustomerPreferenceCenterLib.PreferenceCheckers
 {
-    public class PreferenceChecker : IPreferenceChecker
+    public class BasicPreferenceChecker : IPreferenceChecker
     {
         public IReadOnlyDictionary<DateTime, ISet<string>> GetRecipientsForDateRange(DateTime startDate,
             int numOfDays, IReadOnlyDictionary<string, IPreference> customerPreferences)
