@@ -35,7 +35,7 @@ namespace CustomerPreferenceCenterLib.PreferenceCheckers
                
             }
             Task.WaitAll(tasks.ToArray());
-            return (IReadOnlyDictionary < DateTime, ISet<string> > )recipientsForDates;
+            return recipientsForDates;
         }
     }
 }
